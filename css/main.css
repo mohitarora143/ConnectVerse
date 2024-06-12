@@ -1,0 +1,399 @@
+/* CSS for Main Page Layout */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+    
+.container {
+    width: 100%;
+    border: 3px solid rgb(0, 30, 255);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: auto;
+    row-gap: 12px;
+    column-gap: 12px;
+    margin: 50px;
+    box-sizing: border-box;
+    background-color: #b3d9ff; /* Background color added here */
+}
+
+    .item {
+        margin: 5px 0;
+        border: 2px ridge aqua;
+    }
+    
+    .item:nth-child(1) {
+        grid-column: 1;
+        grid-row: span 2;
+        height: calc(122px * 2 + 48px);
+    }
+    
+    .item:nth-child(8),
+    .item:nth-child(9) {
+        grid-column: span 1;
+        width: 100%;
+    }
+    
+    .navbar {
+        padding: 20px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #000000;
+    }
+    
+    .welcome-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .welcome-text {
+        text-align: center;
+        justify-content: space-between;
+        margin-left: 200px;
+        flex: 2;
+    }
+    
+    .welcome-text h1, .welcome-text p {
+        margin: 0;
+    }
+    
+    .user-info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+    }
+    
+    .user-dp img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid red;
+        margin-right: 25px;
+        object-fit: cover;
+    }
+    
+    .user-dpp img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 15px;
+        object-fit: cover; 
+    }
+    
+    .user-details {
+        text-align: right;
+    }
+    
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        z-index: 1030;
+    }
+    
+    .nav-item {
+        flex: 1;
+        text-align: center;
+        font-size: 19px;
+        cursor: pointer;
+        text-decoration: none; 
+        color: inherit; 
+    }
+    
+    .nav-item img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .navbar-brand {
+        color: #000 !important;
+    }
+    
+    .user-details p {
+        margin: 0;
+        color: #000;
+    }
+    
+    .nav-icon {
+        margin: 0 10px;
+        font-size: 1.5rem;
+    }
+    
+    .navbar-brand:hover {
+        color: #ccc !important;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .container {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+    
+        .item {
+            height: auto;
+            width: auto;
+        }
+    
+        .item:nth-child(1) {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+    }
+    
+    .item:nth-child(1) img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 4px double black;
+        padding: 3px;
+    }
+    
+    .usernames {
+        text-align: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    .item:nth-child(1) .bio {
+        bottom: 0;
+        left: 0;
+        padding: 10px;
+        object-fit: cover;
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 100%;
+    }
+    
+    .item:nth-child(1) .bio p {
+        margin: 0;
+    }
+    
+    #posts {
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .details {
+        margin-top: 12px;
+        font-size: large;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .edit {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .add-post-options {
+        border: 3px solid black;
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #f5f5f5;
+    }
+    
+    .option {
+        padding: 10px 20px;
+        background-color: #e0e0e0;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        text-align: center;
+        flex: 1;
+    }
+    
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: auto; /* Use auto to ensure rows take up only as much space as needed */
+    row-gap: 12px;
+    column-gap: 12px;
+    margin: 50px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+
+
+}
+
+.item {
+    margin: 5px 0;
+    border: 2px ridge aqua;
+}
+
+/* Merge the first column items from Item 1 to Item 5 */
+.item:nth-child(1) {
+    grid-column: 1;
+    grid-row: span 2;
+    height: calc(122px * 2 + 48px);
+}
+
+/* Adjust grid settings for item 8 and item 9 */
+.item:nth-child(8),
+.item:nth-child(9) {
+    grid-column: span 1; /* Span across two columns */
+    width: 100%; /* Take 100% width */
+}
+
+.navbar {
+    padding: 20px;
+    background-color: #ffffff; /* Changed to white */
+    border-bottom: 1px solid #000000; /* Added a black bottom border */
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.welcome-text {
+    text-align: center;
+    justify-content: space-between;
+    margin-left: 200px;
+    flex: 2;
+}
+
+.welcome-text h1, .welcome-text p {
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.user-dp img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid red;
+    margin-right: 25px;
+    object-fit: cover;
+}
+
+.user-dpp img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover; 
+}
+
+.user-details {
+    text-align: right;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1030; /* Ensure it stays above other elements */
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    font-size: 19px;
+    cursor: pointer;
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.nav-item img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar-brand {
+    color: #000 !important; /* Changed to black */
+}
+
+.user-details p {
+    margin: 0;
+    color: #000; /* Changed to black */
+}
+
+.nav-icon {
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.navbar-brand:hover {
+    color: #ccc !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .item {
+        height: auto;
+        width: auto;
+    }
+
+    .item:nth-child(1) {
+        grid-column: span 1;
+        grid-row: span 2; /* Adjust the span for smaller screens */
+    }
+}
+
+.item:nth-child(1) img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px double black; /* Add a solid black border */
+    padding: 2px;
+}
+
+.usernames {
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.item:nth-child(1) .bio {
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    object-fit: cover;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    width: 100%;
+}
+
+.item:nth-child(1) .bio p {
+    margin: 0;
+}
+
+#posts {
+    text-align: center;
+    justify-content: center;
+}
+
+.add-post-options a{
+text-decoration: none;
+}
